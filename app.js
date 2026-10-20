@@ -68,7 +68,7 @@ app.use((error, req, res, next)=>{
     return res.redirect("/internalError")
 })
 
-app.listen(process.env.PORT, (err)=>{
+app.listen(process.env.PORT || process.env.CUSTOM_PORT, (err)=>{
     if (err){
         Log("Error in starting server. Exiting...")
     }
