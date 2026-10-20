@@ -1,0 +1,31 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "eComm portal admin with mongodb backend and mongodb driver",
+  "license": "ISC",
+  "author": "som",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "NODE_ENV=production PORT=3000 MONGODB_URI=mongodb+srv://db-user:password0@cluster0.9sys7.mongodb.net/?appName=Cluster0 MONGODB_SCHEMA=schema_2026 SESSION_SECRET=sAvInGpRiVaTeRyAn node app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "csurf": "^1.11.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "flash": "^1.1.0",
+    "helmet": "^8.3.0",
+    "mongodb": "^7.5.0",
+    "morgan": "^1.12.1",
+    "multer": "^2.4.0"
+  }
+}

@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+
+<body>
+   <%- include('includes/navigation.ejs') %>
+    
+    <main>
+        <div style="text-align: center; color: red;">
+            <%if (errMsg){%>
+                <p><%=errMsg%></p>
+            <%}%>
+        </div>
+        <form class="product-form" action="/add-product" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+                <br>
+                <label for="imageF">Image</label>
+                <input type="file" name="imageF" id="imageF">
+                <br>
+                <label for="price">Price</label>
+                <input type="text" name="price" id="title">
+                <br>
+                <label for="desc">Desc</label>
+                <input type="text" name="desc" id="title">
+            </div>
+            
+            <button class="btn" type="submit">Add Product</button>
+        </form>
+    </main>
+<%- include('includes/end.ejs') %>

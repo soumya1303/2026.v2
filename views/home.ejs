@@ -1,0 +1,38 @@
+<%- include('includes/head.ejs') %>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+
+    <main>
+        <% if (prods.length>0) { %>
+            <div class="grid">
+                <% prods.forEach((prod)=>{ %>
+                    <article class="card product-item">
+                        <header class="card__header">
+                            <h1 class="product__title"><%= prod.title %></h1>
+                        </header>
+                        <div class="card__image">
+                            <img src=<%=prod.imageURL%>
+                                alt="A Book">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price"><%=`£ ${prod.price}`%></h2>
+                            <p class="product__description"><%=`${prod.desc.substring(1,200)}...`%><a href="/">more</a></p>
+                        </div>
+                        <div class="card__actions">
+                            <form action="/delete-product" method="POST">
+                                <a class="btn" href=<%=`/view-product/${prod._id}`%> >View</a>
+                                <input type="hidden" name="id" value=<%=prod._id%>>
+                                
+                                <button class="btn">Delete</button>
+                            </form>
+                        </div>
+                        
+                    </article>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <h1>No Products Found!</h1>
+        <% } %>
+    </main>
+<%- include('includes/end.ejs') %>

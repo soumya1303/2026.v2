@@ -1,0 +1,34 @@
+<%- include('includes/head.ejs') %>
+
+
+<body>
+   <%- include('includes/navigation.ejs') %>
+    
+    <main>
+        <div style="text-align: center; color: red;">
+            <%if (errMsg){%>
+                <p><%=errMsg%></p>
+            <%}%>
+        </div>
+        <form class="product-form" action="<%=`/save-edit-product/${prod._id}`%>" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <h2 style="color: blue;"><label for="title"><%=prod.title%></label></h2>
+                <input type="hidden" name="title" value="<%=prod.title%>">
+                <br>
+                <img src="<%=prod.imageURL%>" height="400" width="300">
+                <input type="file" name="imageF" id="imageF" value="<%=prod.imageURL%>">
+                <br>
+                <h3><label for="price">Price (£)</label></h3>
+                
+                <input type="text" name="price" id="title" value="<%=prod.price%>" >
+                
+                <h3><label for="desc">Movie Synopsis</label></h3>
+                <!-- <input type="text" name="desc" id="title" value="<%=prod.desc%>"> -->
+                 <textarea id="desc" name="desc" rows="5" cols="100" style="height: 150px; width: 510px;" ><%=prod.desc%></textarea>
+            </div>
+            <a href="<%=`/view-product/${prod._id}`%>" class="btn">Cancel</a>
+            
+            <button class="btn" type="submit">Update</button>
+        </form>
+    </main>
+<%- include('includes/end.ejs') %>

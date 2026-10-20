@@ -1,0 +1,43 @@
+<%- include('includes/head.ejs') %>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+   
+
+    <main>
+        <div style="text-align: center; color: red;">
+            <%if (errMsg){%>
+                <p><%=errMsg%></p>
+            <%}%>
+        </div>
+        <form class="login-form" action="/signup" method="POST">
+
+            <div class="form-control">
+                <label for="empId">Emp Id</label>
+                <input type="text" name="empId" id="empId">
+            </div>
+            <div class="form-control">
+                <label for="fname">Forename</label>
+                <input type="text" name="fname" id="fname">
+            </div>
+            <div class="form-control">
+                <label for="email">Surname</label>
+                <input type="text" name="sname" id="sname">
+            </div>
+            <div class="form-control">
+                <label for="emailId">E-Mail</label>
+                <input name="emailId" id="emailId">
+            </div>
+            <div class="form-control">
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwd">
+            </div>
+            <div class="form-control">
+                <label for="cnfPwd">Confirm password</label>
+                <input type="password" name="cnfPwd" id="cnfPwd">
+            </div>
+            
+            <button class="btn" type="submit">Signup</button>
+        </form>
+    </main>
+<%- include('includes/end.ejs') %>

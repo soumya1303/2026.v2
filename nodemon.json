@@ -1,0 +1,8 @@
+{
+    "env":{
+        "PORT":3000,
+        "MONGODB_URI":"mongodb+srv://db-user:password0@cluster0.9sys7.mongodb.net/?appName=Cluster0",
+        "MONGODB_SCHEMA":"schema_2026",
+        "SESSION_SECRET":"sAvInGpRiVaTeRyAn"
+    }
+}

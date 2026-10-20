@@ -1,0 +1,20 @@
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <%if (isAuthenticated){%>
+                <li class="main-header__item"><a  href="/">Home</a></li>
+                <li class="main-header__item"><a  href="/add-product">Add Product</a></li>
+                <li class="main-header__item">
+                        <form action="/logout" method="post">
+                            <button type="submit" class="btn">Log Out</button>
+                            
+                        </form>
+                </li>
+            <%} else {%>
+                <li class="main-header__item"><a  href="/">Home</a></li>
+                <li class="main-header__item"><a  href="/login">Login</a></li>
+                <li class="main-header__item"><a  href="/signup">Signup</a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
